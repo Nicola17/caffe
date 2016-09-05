@@ -73,6 +73,7 @@ class Solver {
     return test_nets_;
   }
   int iter() { return iter_; }
+  Dtype smoothed_loss() const {return smoothed_loss_;}
 
   // Invoked at specific points during an iteration
   class Callback {
