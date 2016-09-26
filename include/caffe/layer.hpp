@@ -189,6 +189,11 @@ class Layer {
   const LayerParameter& layer_param() const { return layer_param_; }
 
   /**
+   * @brief Returns the layer parameter.
+   */
+  LayerParameter& layer_param() { return layer_param_; }
+
+  /**
    * @brief Writes the layer parameter to a protocol buffer
    */
   virtual void ToProto(LayerParameter* param, bool write_diff = false);
