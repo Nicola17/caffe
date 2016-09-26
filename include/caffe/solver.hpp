@@ -74,6 +74,7 @@ class Solver {
   }
   int iter() { return iter_; }
   Dtype smoothed_loss() const {return smoothed_loss_;}
+  std::pair<unsigned int, Dtype> accuracy(){return accuracy_;}
 
   // Invoked at specific points during an iteration
   class Callback {
@@ -118,6 +119,8 @@ class Solver {
   vector<Callback*> callbacks_;
   vector<Dtype> losses_;
   Dtype smoothed_loss_;
+  //Contains the accuracy computed at the iteration _accuracy.first
+  std::pair<unsigned int, Dtype> accuracy_;
 
   // The root solver that holds root nets (actually containing shared layers)
   // in data parallelism

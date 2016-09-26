@@ -403,6 +403,9 @@ void Solver<Dtype>::Test(const int test_net_id) {
     }
     LOG(INFO) << "    Test net output #" << i << ": " << output_name << " = "
               << mean_score << loss_msg_stream.str();
+    if(output_name.compare("accuracy") == 0){
+	accuracy_ = std::pair<unsigned int,Dtype>(iter_,mean_score);
+    }
   }
 }
 
